@@ -1,14 +1,16 @@
+import React from "react"; // imported just for learning purpose and putting emphasis on it
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import ExpenseDetails from './ExpenseDetails';
+import Card from './Card';
 
 function ExpenseItem(props){
 
     return (
-        <div className='expense-item'>
+        <Card className='expense-item'>
             <ExpenseDate date={props.date}/>
             <ExpenseDetails title={props.title} location={props.location} amount={props.amount}/>
-        </div>
+        </Card>
     );
 }
 
