@@ -2,9 +2,9 @@ import React from "react"; // imported just for learning purpose and putting emp
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import ExpenseDetails from './ExpenseDetails';
-import Card from './Card';
+import Card from '../UI/Card';
 
-function ExpenseItem(props){
+const ExpenseItem = (props) => {
 
     return (
         <Card className='expense-item'>

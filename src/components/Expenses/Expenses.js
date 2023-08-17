@@ -1,9 +1,9 @@
 import React from "react"; // imported just for learning purpose and putting emphasis on it
 import './Expenses.css'
 import ExpenseItem from "./ExpenseItem";
-import Card from './Card';
+import Card from '../UI/Card';
 
-function Expenses(props) {
+const Expenses = (props) => {
     return (
         <Card className="expenses">
             <ExpenseItem title={props.items[0].title}
