@@ -1,5 +1,7 @@
 import React from "react"; // imported just for learning purpose and putting emphasis on it
 import Expenses from "./components/Expenses/Expenses";
+import ExpenseForm from "./components/Expenses/ExpenseForm";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -24,17 +26,10 @@ const App = () => {
     },
 ];
 
-  // The below code acts behind the scene after using jsx
-  // return React.createElement(
-  //   'div',
-  //   {},
-  //   React.createElement('h2',{},"Let's get started!"),
-  //   React.createElement(Expenses,{items: expenses})
-  // );
-
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense/>
+      <ExpenseForm/>
       <Expenses items={expenses}/>
     </div>
   );
