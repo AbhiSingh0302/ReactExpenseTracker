@@ -1,6 +1,5 @@
 import React from "react"; // imported just for learning purpose and putting emphasis on it
 import Expenses from "./components/Expenses/Expenses";
-import ExpenseForm from "./components/Expenses/ExpenseForm";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
@@ -29,7 +28,6 @@ const App = () => {
   return (
     <div>
       <NewExpense/>
-      <ExpenseForm/>
       <Expenses items={expenses}/>
     </div>
   );
