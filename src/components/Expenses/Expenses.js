@@ -13,7 +13,7 @@ const Expenses = (props) => {
     return (
         <Card className="expenses">
             <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-            {props.items.map((expense) => (
+            {props.items.filter(el => el.date.getFullYear().toString() === filteredYear.toString()).map((expense) => (
                 //Had to use round bracket(()) instead of curly({}) because it was giving return error
                 <ExpenseItem title={expense.title}
                 date={expense.date}
