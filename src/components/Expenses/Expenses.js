@@ -13,7 +13,15 @@ const Expenses = (props) => {
     return (
         <Card className="expenses">
             <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-            <ExpenseItem title={props.items[0].title}
+            {props.items.map((expense) => (
+                //Had to use round bracket(()) instead of curly({}) because it was giving return error
+                <ExpenseItem title={expense.title}
+                date={expense.date}
+                amount={expense.amount}
+                //Had to use key attr coz new expense was not adding as expected(old element being showed instead of new expense)
+                key={expense.id}/>    
+            ))}
+            {/* <ExpenseItem title={props.items[0].title}
                 date={props.items[0].date}
                 amount={props.items[0].amount}
                 location={props.items[0].location} />
@@ -28,7 +36,7 @@ const Expenses = (props) => {
             <ExpenseItem title={props.items[3].title}
                 date={props.items[3].date}
                 amount={props.items[3].amount}
-                location={props.items[3].location} />
+                location={props.items[3].location} /> */}
         </Card>
     );
 }
