@@ -1,0 +1,14 @@
+.filter-box{
+    margin-bottom: 10px;
+}
+
+.filter-label{
+    color: white;
+    margin-right: 1rem;
+}
+
+.filter-select{
+    padding: 5px;
+    width: 6rem;
+    border-radius: 8px;
+}

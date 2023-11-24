@@ -8,11 +8,16 @@ const ExpenseItem = (props) => {
     const [title,setTitle] = useState(props.title);
     const [amount,setAmount] = useState(props.amount);
     const clickHandler = () => {
-        setTitle("Updated!!")
-        console.log(title);
+        const newTitle = prompt("What is new Title");
+        if(newTitle && newTitle.trim()){
+            setTitle(newTitle.trim());
+        }
     }
     const changePrice = () => {
-        setAmount(100)
+        const newAmount = prompt("What is new amount");
+        if(!isNaN(Number(newAmount)) && newAmount){
+            setAmount(Number(newAmount))
+        }
     }
     const removeHandler = (e) => {
         console.log(e.target.parentNode.remove());
@@ -23,9 +28,9 @@ const ExpenseItem = (props) => {
         <Card className='expense-item'>
             <ExpenseDate date={props.date}/>
             <ExpenseDetails title={title} location={props.location} amount={amount}/>
-            <button onClick={clickHandler}>Change Title!!</button>
-            <button onClick={removeHandler}>Delete</button>
-            <button onClick={changePrice}>Change Price</button>
+            <button onClick={clickHandler} className="expense-button">Change Title!!</button>
+            <button onClick={removeHandler} className="expense-button">Delete</button>
+            <button onClick={changePrice} className="expense-button">Change Price</button>
         </Card>
         </li>
     );
